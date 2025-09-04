@@ -13,4 +13,4 @@ def test_alert (page: Page):
 
     ##click an element using xpath
     page.locator('//*[@id="getwebsitebtn"]').click()
-    page.pause()
+    ##page.pause()
