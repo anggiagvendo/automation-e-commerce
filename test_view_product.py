@@ -31,4 +31,6 @@ def test_view_product (page:Page):
 
     expect(page.get_by_role("link", name="Write Your Review")).to_be_visible
     page.get_by_role("link", name="Write Your Review").click()
+
+    ##add indicators
     
