@@ -14,12 +14,16 @@ def test_add_to_cart (page : Page):
     count = end_div - start_div
 
     while current_div <= end_div:
+        ##click add to cart
         page.locator('xpath=/html/body/section[2]/div/div/div[2]/div/div['+str(current_div)+']/div/div[1]/div[1]/a').click()
+
+        ##click back to shopping
         page.locator('xpath=//*[@id="cartModal"]/div/div/div[3]/button').click()
         current_div += 1
         
     page.get_by_role("link", name="Cart").click()
 
+    ##checking cart  based on count only
     while count_div <= end_div-1:
         expect(page.locator('xpath=//*[@id="product-'+str(count_div)+'"]')).to_be_visible()
         count_div += 1
